@@ -1,0 +1,5 @@
+<div class="pdp-link">
+    <isif condition="${product.countryOfOrigin3}">
+        <p> ${Resource.msg('label.made.in.product', 'product', null)} ${product.countryOfOrigin3} </p>
+    </isif>
+</div>

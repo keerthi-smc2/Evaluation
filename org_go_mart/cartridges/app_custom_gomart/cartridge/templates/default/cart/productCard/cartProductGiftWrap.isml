@@ -1,0 +1,11 @@
+<form id="giftWrapcheck" action="${URLUtils.url('Cart-AddGiftWrap')}" class="giftWrap" method="POST"  <isprint value="${pdict.basket.custom.giftWrap.attributes}" encoding="off" />> 
+   <div class="giftwrap-div"
+        style="font-size:13px;">
+        <input type="hidden" class="add-gw-url" value="${URLUtils.url('Cart-AddGiftWrap')}"/>
+        <input type="hidden" class="remove-gw-url" value="${URLUtils.url('Cart-RemoveGiftWrap')}" />
+        <isif condition="${lineItem.giftWrapEligible}"> 
+          <input  type="checkbox" name="giftwrap"  id="checkbox" <isprint value="${pdict.basket.custom.giftWrap}" encoding="off" /> />
+          <isprint value="${Resource.msg('label.product.card.giftwrap','cart', null)}" encoding="htmlcontent" />
+        </isif>
+    </div>
+</form> 

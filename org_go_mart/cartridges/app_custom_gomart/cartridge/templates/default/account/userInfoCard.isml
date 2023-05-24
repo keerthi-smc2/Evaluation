@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header clearfix">
+        <h4 class="pull-left">${Resource.msg('label.userinfo','account',null)}</h4>
+        <a href="${URLUtils.url('Account-EditUserInfo')}" class="pull-right" aria-label="${Resource.msg('label.userinfo.edit','account',null)}">${Resource.msg('link.edit','account',null)}</a>
+    </div>
+    <div class="card-body">
+           <isif condition="${pdict.account.userInfo.profileGender}">
+                <dl>
+                    <dt>${Resource.msg('label.profile.gender','account',null)}</dt>
+                    <dd>${pdict.account.userInfo.profileGender}</dd>
+                </dl>
+            </isif>
+           <isif condition="${pdict.account.userInfo.tShirtSize}">
+                <dl>
+                    <dt>${Resource.msg('label.profile.tshirtsize','account',null)}</dt>
+                    <dd>${pdict.account.userInfo.tShirtSize}</dd>
+                </dl>
+           </isif>
+           <isif condition="${pdict.account.userInfo.pantSize}">
+                <dl>
+                    <dt>${Resource.msg('label.profile.pantsize','account',null)}</dt>
+                    <dd>${pdict.account.userInfo.pantSize}</dd>
+                </dl>
+           </isif>    
+           <isif condition="${pdict.account.userInfo.shoeSize}">
+                <dl>
+                    <dt>${Resource.msg('label.profile.shoesize','account',null)}</dt>
+                    <dd>${pdict.account.userInfo.shoeSize}</dd>
+                </dl>
+           </isif>
+    </div>
+</div>

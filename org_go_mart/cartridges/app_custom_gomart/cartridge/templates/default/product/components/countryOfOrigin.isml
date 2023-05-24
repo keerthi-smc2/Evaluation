@@ -1,0 +1,7 @@
+ <div class="countryOfOrigin3 ">
+ <isif condition="${product.countryOfOrigin3}">
+      <span>${Resource.msg('label.made.in.product', 'product', null)}</span>
+      <span class="value country" >${pdict.product.countryOfOrigin3}</span>
+  </isif>
+ </div> 
+

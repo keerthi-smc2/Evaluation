@@ -1,0 +1,59 @@
+
+<form action="${URLUtils.url('Account-SaveUserInfo')}" class="edit-userInfo-form" method="POST" <isprint value="${pdict.profileForm.attributes}" encoding="off" />>
+     <!-- For gender -->
+      <div class="form-group">
+            <label class="form-control-label" for="profileGender"> 
+              <isprint value="${pdict.profileForm.customer.profileGender.label}" encoding="htmlcontent" />
+            </label>
+            <input type="radio" class="form-control-label"  id="Female"  <isprint value="${pdict.profileForm.customer.profileGender.attributes}" encoding="off" />
+                ${pdict.profileForm.customer.profileGender.htmlValue === 'Female' ? 'checked' : ''}/>
+            <isprint value="${Resource.msg('label.input.profileGender.female', 'forms', null)}" encoding="htmlcontent" />
+                
+            <input type="radio" class="form-control-label" id="Male" <isprint value="${pdict.profileForm.customer.profileGender.attributes}" encoding="off" /> 
+                ${pdict.profileForm.customer.profileGender.htmlValue === 'Male' ? 'checked' : ''}/>
+            <isprint value="${Resource.msg('label.input.male.profileGender', 'forms', null)}" encoding="htmlcontent" /> 
+      </div>     
+
+      <!-- For T Shirt Size -->
+     <div class="form-group">
+          <label class="form-control-label" for="tShirtSize">
+                    <isprint value="${pdict.profileForm.customer.tShirtSize.label}" encoding="htmlcontent" />
+          </label>
+          <select class="form-control" id="tShirtSize"
+              <isprint value="${pdict.profileForm.customer.tShirtSize.attributes}" encoding="off" />
+                 autocomplete="tShirtSize">
+              <isloop items=${pdict.profileForm.customer.tShirtSize.options} var="tShirtSize">
+                    <option id="${tShirtSize.id}" value="${tShirtSize.htmlValue}" 
+                       <isif condition="${tShirtSize.selected}">selected</isif>>${tShirtSize.label}</option>
+              </isloop>
+          </select>
+     </div>
+
+     <!-- For Pant Size -->
+     <div class="form-group">
+          <label class="form-control-label" for="pantSize">
+            <isprint value="${pdict.profileForm.customer.pantSize.label}" encoding="htmlcontent" />
+          </label>
+          <input type="text" class="form-control" id="pantSize" <isprint value="${pdict.profileForm.customer.pantSize.attributes}" encoding="off" /> />
+     </div>
+
+     <!--   For Shoe Size  -->
+     <div class="form-group">
+         <label class="form-control-label" for="shoeSize">
+            <isprint value="${pdict.profileForm.customer.shoeSize.label}" encoding="htmlcontent" />
+         </label>
+         <input type="text" class="form-control" id="shoeSize" <isprint value="${pdict.profileForm.customer.shoeSize.attributes}" encoding="off" />/>
+     </div>
+
+     <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+    
+     <div class="row">
+            <div class="col">
+                <a href="${URLUtils.url('Account-Show')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+            </div>
+
+            <div class="col">
+                <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.save','account',null)}</button>
+            </div>
+     </div>
+</form>
